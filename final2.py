@@ -63,9 +63,9 @@ processed_string_text.split()
 
 import string
 
-def calculate_frequencies(words):
+def calculate_frequencies(file_contents):
     frequency_words = {} #dictionary to store the words which is the expected output
-    words = open('words','r').read() #pass the input file
+    words = open('file_contents','r').read() #pass the input file
     if words.isalpha() == False: #check if the words contain puntuation marks
         processed_words = words.translate(str.maketrans('', '', string.punctuation)) #remove puntuation marks
         split_processed_words = processed_words.split() #split processed words.
@@ -76,7 +76,7 @@ def calculate_frequencies(words):
         return frequency_words #return all words that make the interesting dict.
 
 #need to figure out a way to get output from the script above?
-calculate_frequencies(demo2.txt)
+calculate_frequencies()
 
 #3.2 iteration 2: the script needs to be able to count the frequencies of the word.
 
