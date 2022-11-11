@@ -1,5 +1,5 @@
 
-
+#checking if all seems as is
 
 # create a word cloud
 #made up of different sized words which is based on how many times the word appear in a specific text
