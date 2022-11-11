@@ -64,7 +64,7 @@ processed_string_text.split()
 import string
 
 def calculate_frequencies(words):
-    frequency_words = {} #dictionary to store the words
+    frequency_words = {} #dictionary to store the words which is the expected output
     words = open('words','r').read() #pass the input file
     if words.isalpha() == False: #check if the words contain puntuation marks
         processed_words = words.translate(str.maketrans('', '', string.punctuation)) #remove puntuation marks
