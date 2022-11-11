@@ -64,6 +64,12 @@ processed_string_text.split()
 import string
 
 def calculate_frequencies(file_contents):
+    # here is a list of uninteresting words to process the text
+    uninteresting_words = ["the", "a", "to", "if", "is", "it", "of", "and", "or", "an", "as", "i", "me", "my", \
+    "we", "our", "ours", "you", "your", "yours", "he", "she", "him", "his", "her", "hers", "its", "they", "them", \
+    "their", "what", "which", "who", "whom", "this", "that", "am", "are", "was", "were", "be", "been", "being", \
+    "have", "has", "had", "do", "does", "did", "but", "at", "by", "with", "from", "here", "when", "where", "how", \
+    "all", "any", "both", "each", "few", "more", "some", "such", "no", "nor", "too", "very", "can", "will", "just"]
     frequency_words = {} #dictionary to store the words which is the expected output
     words = open('file_contents','r').read() #pass the input file
     if words.isalpha() == False: #check if the words contain puntuation marks
