@@ -58,7 +58,7 @@ processed_string_text.split()
 # and returns the result.
 
 
-#words = open('demo2.txt','r').read() #pass the input file
+#words = open('demo.txt','r').read() #pass the input file
 
 
 import string
@@ -71,7 +71,7 @@ def calculate_frequencies(file_contents):
     "have", "has", "had", "do", "does", "did", "but", "at", "by", "with", "from", "here", "when", "where", "how", \
     "all", "any", "both", "each", "few", "more", "some", "such", "no", "nor", "too", "very", "can", "will", "just"]
     frequency_words = {} #dictionary to store the words which is the expected output
-    words = open('file_contents','r').read() #pass the input file
+    words = open('demo.txt','r').read() #pass the input file
     if words.isalpha() == False: #check if the words contain puntuation marks
         processed_words = words.translate(str.maketrans('', '', string.punctuation)) #remove puntuation marks
         split_processed_words = processed_words.split() #split processed words.
@@ -82,11 +82,45 @@ def calculate_frequencies(file_contents):
         return frequency_words #return all words that make the interesting dict.
 
 #need to figure out a way to get output from the script above?
-calculate_frequencies()
+calculate_frequencies('demo.txt')
 
 #3.2 iteration 2: the script needs to be able to count the frequencies of the word.
 
 #4. execute it
 
+
+
+####breaking it down and re-writing the function
+#0 save the open in a dictionary -- next
+#1 open a text file and print the contents
+#2 remove puntuations
+#3 remove uniteresting words --here
+#4 count the frequencies of each word --final
+
+
+import string
+
+def calculate_frequencies(file_contents):
+
+    uninteresting_words = ["the", "a", "to", "if", "is", "it", "of", "and", "or", "an", "as", "i", "me", "my", \
+    "we", "our", "ours", "you", "your", "yours", "he", "she", "him", "his", "her", "hers", "its", "they", "them", \
+    "their", "what", "which", "who", "whom", "this", "that", "am", "are", "was", "were", "be", "been", "being", \
+    "have", "has", "had", "do", "does", "did", "but", "at", "by", "with", "from", "here", "when", "where", "how", \
+    "all", "any", "both", "each", "few", "more", "some", "such", "no", "nor", "too", "very", "can", "will", "just"]
+    
+    frequency_words = {} #dictionary to store the words which is the expected output
+
+
+    words = open('demo.txt','r').read()  #pass the input file
+    if words.isalpha() == False: #check if the words contain puntuation marks
+        processed_words = words.translate(str.maketrans('', '', string.punctuation)) #remove puntuation marks
+        split_processed_words = processed_words.split() #split processed words.
+        return split_processed_words
+
+ 
+
+
+# Testing the function
+calculate_frequencies('demo.txt')
 
 
