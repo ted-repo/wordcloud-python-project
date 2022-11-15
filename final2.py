@@ -91,11 +91,12 @@ calculate_frequencies('demo.txt')
 
 
 ####breaking it down and re-writing the function
-#0 save the open in a dictionary -- next
+#0 save the open in a dictionary
 #1 open a text file and print the contents
 #2 remove puntuations
-#3 remove uniteresting words --here
-#4 count the frequencies of each word --final
+#3 remove uniteresting words
+#4 count the frequencies of each word
+#5 testing the code to ensure all aspects has been covered
 
 
 import string
@@ -114,13 +115,17 @@ def calculate_frequencies(file_contents):
     words = open('demo.txt','r').read()  #pass the input file
     if words.isalpha() == False: #check if the words contain puntuation marks
         processed_words = words.translate(str.maketrans('', '', string.punctuation)) #remove puntuation marks
-        split_processed_words = processed_words.split() #split processed words.
-        return split_processed_words
-
- 
+        split_processed_words = processed_words.split() #split processed words
+    for word in split_processed_words: #filtering uniteresting words out using a for loop.
+        if word not in uninteresting_words:
+            if word not in frequency_words: #counting the no of times each word appear and storing it as the value for the keys in the dictionary
+                frequency_words[word] = 1
+            else:
+                frequency_words[word] += 1
+    return frequency_words #outputing the frequency_words dictionary.
+        
 
 
 # Testing the function
 calculate_frequencies('demo.txt')
-
 
