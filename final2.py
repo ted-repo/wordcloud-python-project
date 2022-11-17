@@ -13,6 +13,7 @@
 #3 remove uniteresting words
 #4 count the frequencies of each word
 #5 testing the code to ensure all aspects has been covered
+#5 convert all words in the content file to lower case (to ensure all substrings are identified carefully as uninteresting words--completed
 
 
 #############modifications to the final working code###############
@@ -30,8 +31,10 @@ def calculate_frequencies(file_contents):
     
     file_contents = open('demo.txt','r').read()  # Asinput file already passed
 
-    if file_contents.isalpha() == False: #check if the words contain puntuation marks
-        processed_words = file_contents.translate(str.maketrans('', '', string.punctuation)) #remove puntuation marks
+    file_contents_lower = file_contents.lower() #converting substrings to lower case.
+
+    if file_contents_lower.isalpha() == False: #check if the words contain puntuation marks
+        processed_words = file_contents_lower.translate(str.maketrans('', '', string.punctuation)) #remove puntuation marks
         split_processed_words = processed_words.split() #split processed words
     for word in split_processed_words: #filtering uniteresting words out using a for loop.
         if word not in uninteresting_words:
@@ -42,11 +45,12 @@ def calculate_frequencies(file_contents):
     return frequency_words #outputing the frequency_words dictionary #commenting this out as it was preventing the wordcloud module below from working.
     
     
+
         #wordcloud 
     #cloud = wordcloud.WordCloud()
     #cloud.generate_from_frequencies(frequency_words)
     #return cloud.to_array()
 
 
-calculate_frequencies(demo.txt) #testing the function before integrating into the wordcloud module.
+calculate_frequencies("file_contents") #testing the function before integrating into the wordcloud module.
 
