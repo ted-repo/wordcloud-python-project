@@ -15,8 +15,6 @@
 #5 testing the code to ensure all aspects has been covered
 
 
-
-
 #############final working code###############
 import string
 
@@ -51,5 +49,3 @@ def calculate_frequencies(file_contents):
 
 
 #calculate_frequencies(file_contents) #testing the function before integrating into the wordcloud module.
-
-
