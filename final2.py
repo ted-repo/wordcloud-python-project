@@ -15,7 +15,7 @@
 #5 testing the code to ensure all aspects has been covered
 
 
-#############final working code###############
+#############modifications to the final working code###############
 import string
 
 def calculate_frequencies(file_contents):
@@ -28,7 +28,7 @@ def calculate_frequencies(file_contents):
     
     frequency_words = {} #dictionary to store the words which is the expected output
     
-    #file_contents = open('demo.txt','r').read()  # Asinput file already passed
+    file_contents = open('demo.txt','r').read()  # Asinput file already passed
 
     if file_contents.isalpha() == False: #check if the words contain puntuation marks
         processed_words = file_contents.translate(str.maketrans('', '', string.punctuation)) #remove puntuation marks
@@ -39,13 +39,14 @@ def calculate_frequencies(file_contents):
                 frequency_words[word] = 1
             else:
                 frequency_words[word] += 1
-    #return frequency_words #outputing the frequency_words dictionary #commenting this out as it was preventing the wordcloud module below from working.
+    return frequency_words #outputing the frequency_words dictionary #commenting this out as it was preventing the wordcloud module below from working.
     
     
         #wordcloud 
-    cloud = wordcloud.WordCloud()
-    cloud.generate_from_frequencies(frequency_words)
-    return cloud.to_array()
+    #cloud = wordcloud.WordCloud()
+    #cloud.generate_from_frequencies(frequency_words)
+    #return cloud.to_array()
 
 
-#calculate_frequencies(file_contents) #testing the function before integrating into the wordcloud module.
+calculate_frequencies(demo.txt) #testing the function before integrating into the wordcloud module.
+
